@@ -204,7 +204,7 @@ export default function App() {
             className="text-xs tracking-widest uppercase text-accent"
             style={{ fontFamily: "'DM Mono', monospace" }}
           >
-            Available for internships &amp; co-op
+            Available for full time positions
           </span>
           <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
         </div>
@@ -235,7 +235,7 @@ export default function App() {
               <Github size={16} /> GitHub
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/nabil-khan00/"
               target="_blank"
               rel="noreferrer"
               className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground border border-border px-4 py-2 transition-colors hover:border-foreground"
@@ -284,10 +284,10 @@ export default function App() {
                 I&apos;m Nabil Khan, an engineering student at Concordia University (Class of 2027) with a deep interest in bridging the gap between hardware instrumentation and modern software engineering. Whether building automated test apparatuses or full-stack web dashboards, I focus on precision, efficiency, and reliability.
               </p>
               <p>
-                Before diving deeply into computer engineering, I spent over five years working in functional quality assurance at Keywords Studios. That experience instilled a rigorous mindset for finding edge cases, documenting complex software bugs, and collaborating directly with development teams in fast-paced environments.
+                Before getting into computer engineering, here's a little bit about me. I spent over five years working in software quality assurance at Keywords Studios. That experience instilled a rigorous mindset for finding edge cases, documenting complex software bugs, and collaborating directly with development teams in fast-paced environments.
               </p>
               <p>
-                When I&apos;m not debugging code or designing digital systems, you can usually find me racing on the water with my dragonboat team, playing volleyball, hitting the gym, or experimenting with new recipes in the kitchen.
+                When I&apos;m not debugging code or designing digital systems, you can usually find me racing on the water with my dragonboat team, playing volleyball, hitting the gym, or testing out new recipes in the kitchen.
               </p>
             </div>
 
@@ -413,7 +413,7 @@ export default function App() {
               href="mailto:knabil8600@gmail.com?subject=Resume%20Request"
               className="mt-8 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground border border-border px-4 py-2 transition-colors hover:border-foreground"
             >
-              Request CV <ExternalLink size={14} />
+              CV <ExternalLink size={14} />
             </a>
           </div>
 
@@ -482,7 +482,7 @@ export default function App() {
 
           <div className="grid md:grid-cols-2 gap-12 items-end">
             <p className="text-primary-foreground/60 leading-relaxed max-w-sm">
-              I&apos;m currently seeking engineering internships, co-op opportunities, and collaborative software projects. Feel free to reach out via email or phone!
+              I&apos;m currently seeking full time oppurtunites and collaborative software projects. Feel free to reach out via email or phone!
             </p>
 
             <div className="space-y-4">
