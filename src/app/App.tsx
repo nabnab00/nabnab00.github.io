@@ -410,10 +410,12 @@ export default function App() {
               My background
             </h2>
             <a
-              href="mailto:knabil8600@gmail.com?subject=Resume%20Request"
+              href="/Nabil_Khan_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-8 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground border border-border px-4 py-2 transition-colors hover:border-foreground"
             >
-              CV <ExternalLink size={14} />
+              View CV <ExternalLink size={14} />
             </a>
           </div>
 
