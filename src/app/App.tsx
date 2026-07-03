@@ -1,73 +1,63 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { Github, Linkedin, Mail, ExternalLink, ArrowUpRight, ChevronDown, Terminal, Menu, X } from "lucide-react";
 
 const NAV_LINKS = ["About", "Projects", "Experience", "Contact"];
 
 const SKILLS = [
-  { category: "Languages", items: ["TypeScript", "Python", "Go", "Rust", "SQL"] },
-  { category: "Frontend", items: ["React", "Next.js", "Tailwind CSS", "WebGL"] },
-  { category: "Backend", items: ["Node.js", "PostgreSQL", "Redis", "GraphQL"] },
-  { category: "Infrastructure", items: ["AWS", "Docker", "Kubernetes", "Terraform"] },
+  { category: "Languages", items: ["Python", "Java", "C++", "C#", "C", "JavaScript", "Verilog", "VHDL"] },
+  { category: "Web & Cloud", items: ["React", "Node.js", "Flask", "HTML/CSS", "Tailwind CSS", "Firebase"] },
+  { category: "Data & AI", items: ["TensorFlow", "Scikit-Learn", "Machine Learning", "Data Pipelines", "Grid Search"] },
+  { category: "Systems & Tools", items: ["SQL", "MongoDB", "Git", "Jira", "Embedded Systems", "NI CompactRIO"] },
 ];
 
 const PROJECTS = [
   {
-    title: "Meridian",
-    tag: "Open Source",
-    year: "2024",
+    title: "NETE Breathing Simulation Machine",
+    tag: "Engineering Capstone",
+    year: "2026",
     description:
-      "A distributed task queue built on top of Redis Streams. Handles 500k+ jobs/day with exactly-once delivery guarantees and real-time monitoring.",
-    stack: ["Go", "Redis", "React", "PostgreSQL"],
+      "Engineering an automated breathing machine control system for naval testing, improving hardware efficiency by 60%. Features a real-time frontend interface and data acquisition pipeline for 100% precise operational control.",
+    stack: ["Python", "CompactRIO", "Linear Actuators", "Embedded Systems"],
     link: "#",
     featured: true,
   },
   {
-    title: "Atlas Search",
-    tag: "Side Project",
-    year: "2024",
+    title: "Car-cycle ML Price Prediction",
+    tag: "Machine Learning",
+    year: "2026",
     description:
-      "Vector-native semantic search engine for codebases. Indexes your repos locally and answers natural-language queries with precise file references.",
-    stack: ["Python", "Rust", "FAISS", "Electron"],
+      "Engineered a machine learning data pipeline to clean and process 161,610 vehicle listings across 811 encoded features. Deployed an optimized Random Forest Regressor achieving a 0.94 R-squared score and low MAE of $2,067.61.",
+    stack: ["Python", "Scikit-Learn", "Random Forest", "Data Pipeline"],
     link: "#",
     featured: true,
   },
   {
-    title: "Sieve",
-    tag: "Work",
-    year: "2023",
+    title: "Shift Flow Scheduling App",
+    tag: "Full Stack",
+    year: "2026",
     description:
-      "Real-time anomaly detection pipeline for financial transaction streams. Reduced false-positive rate by 62% over the legacy rule-based system.",
-    stack: ["Python", "Kafka", "ClickHouse", "Grafana"],
+      "Full-stack scheduling application generating automated monthly schedules for 20+ workers in under a minute. Built manager dashboard tools using React for real-time shift adjustments, eliminating scheduling errors.",
+    stack: ["React", "JavaScript", "MongoDB", "Node.js"],
     link: "#",
     featured: false,
   },
   {
-    title: "Pulsar UI",
-    tag: "Open Source",
-    year: "2023",
+    title: "Munch AI Nutrition & Smart Scale",
+    tag: "IoT & Mobile",
+    year: "2025",
     description:
-      "Headless component library for data-heavy React dashboards. Ships with virtualized tables, sparklines, and a compact date range picker.",
-    stack: ["TypeScript", "React", "Rollup"],
+      "Developed a nutrition tracking mobile app with a Java backend and real-time Firebase cloud sync for 100+ users. Engineered a Bluetooth ESP32 smart scale with ±0.01g precision, reducing meal entry time by 90%.",
+    stack: ["Java", "Android XML", "ESP32", "Firebase"],
     link: "#",
     featured: false,
   },
   {
-    title: "Nomad CLI",
-    tag: "Side Project",
-    year: "2022",
+    title: "Brew & Renew POS System",
+    tag: "Full Stack",
+    year: "2024",
     description:
-      "Terminal tool for managing multiple cloud environments from a single config. Context-switching, secret injection, and cost estimates in one place.",
-    stack: ["Go", "AWS SDK", "GCP SDK"],
-    link: "#",
-    featured: false,
-  },
-  {
-    title: "Logline",
-    tag: "Work",
-    year: "2022",
-    description:
-      "Structured logging framework with first-class OpenTelemetry support. Adopted across 8 microservices, cutting MTTR from 42 min to 11 min.",
-    stack: ["TypeScript", "OpenTelemetry", "Datadog"],
+      "Full-stack inventory and POS web app featuring automated QR code generation and mobile scanning for 200+ items. Automated consignment accounting using Python and SQL to dynamically calculate vendor splits.",
+    stack: ["React", "Flask", "PostgreSQL", "Python"],
     link: "#",
     featured: false,
   },
@@ -75,43 +65,32 @@ const PROJECTS = [
 
 const EXPERIENCE = [
   {
-    company: "Veritas Systems",
-    role: "Senior Software Engineer",
-    period: "2023 — Present",
-    location: "San Francisco, CA",
+    company: "Concordia University",
+    role: "Bachelor of Engineering — Computer Engineering",
+    period: "Expected May 2027",
+    location: "Montreal, QC",
     points: [
-      "Led migration of monolithic Node.js backend to Go microservices, reducing p99 latency by 38%.",
-      "Designed and shipped Sieve, a real-time anomaly detection pipeline processing 4M events/hour.",
-      "Mentored 3 junior engineers and drove quarterly architecture reviews.",
+      "Relevant Coursework: Data Structures and Algorithms, Computer Organization and Software, Digital System Design, Operating Systems.",
+      "Developing hands-on expertise in full-stack architecture, embedded hardware controls, and real-time software systems.",
     ],
   },
   {
-    company: "Helix Cloud",
-    role: "Software Engineer",
-    period: "2021 — 2023",
-    location: "Remote",
+    company: "Keywords Studios",
+    role: "Functional QA Tester & QA Intern",
+    period: "June 2017 — Sept 2022",
+    location: "Montreal, QC",
     points: [
-      "Built the billing and metering infrastructure from scratch, handling 150+ enterprise customers.",
-      "Reduced cold-start latency for serverless functions by 71% through custom runtime pooling.",
-      "Shipped Logline, the internal structured logging framework now used company-wide.",
-    ],
-  },
-  {
-    company: "Aria Labs",
-    role: "Software Engineer Intern",
-    period: "Summer 2020",
-    location: "New York, NY",
-    points: [
-      "Implemented a data ingestion pipeline in Python that processed 10GB/day of sensor telemetry.",
-      "Built a React dashboard for real-time monitoring of IoT device fleets.",
+      "Developed and executed 300+ comprehensive software test cases across mobile and desktop environments utilizing TestRail, improving overall test coverage and reducing post-release defects by 18%.",
+      "Identified, documented, and triaged 500+ critical bugs using Jira, collaborating directly with development teams to propose targeted solutions that enhanced application performance and user experience.",
     ],
   },
 ];
 
 const TAG_COLORS: Record<string, string> = {
-  "Open Source": "bg-accent/15 text-accent",
-  "Side Project": "bg-secondary text-muted-foreground",
-  Work: "bg-primary/8 text-foreground",
+  "Engineering Capstone": "bg-accent/15 text-accent",
+  "Machine Learning": "bg-primary/15 text-primary font-semibold",
+  "Full Stack": "bg-secondary text-muted-foreground",
+  "IoT & Mobile": "bg-primary/8 text-foreground",
 };
 
 function useScrollSpy(ids: string[]) {
@@ -152,7 +131,6 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-background text-foreground" style={{ fontFamily: "'Figtree', sans-serif" }}>
-
       {/* ── Nav ── */}
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -165,7 +143,7 @@ export default function App() {
             className="font-mono text-sm tracking-widest uppercase text-foreground hover:text-accent transition-colors"
             style={{ fontFamily: "'DM Mono', monospace" }}
           >
-            Alex Chen
+            Nabil Khan
           </button>
 
           {/* Desktop nav */}
@@ -184,7 +162,7 @@ export default function App() {
               </button>
             ))}
             <a
-              href="mailto:alex@example.com"
+              href="mailto:knabil8600@gmail.com"
               className="text-sm px-4 py-2 bg-primary text-primary-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
             >
               Hire me
@@ -226,7 +204,7 @@ export default function App() {
             className="text-xs tracking-widest uppercase text-accent"
             style={{ fontFamily: "'DM Mono', monospace" }}
           >
-            Available for work
+            Available for internships &amp; co-op
           </span>
           <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
         </div>
@@ -235,22 +213,21 @@ export default function App() {
           className="text-[clamp(3rem,10vw,8rem)] font-black leading-[0.92] tracking-tight mb-8"
           style={{ fontFamily: "'Epilogue', sans-serif" }}
         >
-          Software
+          Computer
           <br />
-          <span className="text-accent">Engineer</span>
+          <span className="text-accent">Engineering</span>
           <br />
-          &amp; Builder
+          Student &amp; Dev
         </h1>
 
         <div className="grid md:grid-cols-2 gap-8 items-end">
           <p className="text-lg text-muted-foreground leading-relaxed max-w-md">
-            I build reliable backend systems and sharp product interfaces. Currently at{" "}
-            <span className="text-foreground font-medium">Veritas Systems</span> in San Francisco,
-            shipping infrastructure that doesn&apos;t page you at 3am.
+            I build reliable automated systems, machine learning pipelines, and responsive web applications. Currently studying at{" "}
+            <span className="text-foreground font-medium">Concordia University</span> in Montreal, shipping hardware-software integrations that solve real-world problems.
           </p>
           <div className="flex flex-wrap gap-4 md:justify-end">
             <a
-              href="https://github.com"
+              href="https://github.com/nabnab00"
               target="_blank"
               rel="noreferrer"
               className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground border border-border px-4 py-2 transition-colors hover:border-foreground"
@@ -297,23 +274,20 @@ export default function App() {
               className="mt-4 text-4xl font-black leading-tight"
               style={{ fontFamily: "'Epilogue', sans-serif" }}
             >
-              The person behind the commits
+              Engineering rigor meets clean software
             </h2>
           </div>
 
           <div className="space-y-12">
             <div className="space-y-5 text-muted-foreground leading-relaxed">
               <p>
-                I&apos;m Alex Chen, a software engineer with 5+ years of experience designing and
-                building systems that scale. My work lives at the intersection of backend
-                infrastructure and developer tooling — I care deeply about the interfaces between
-                systems and the humans who maintain them.
+                I&apos;m Nabil Khan, an engineering student at Concordia University (Class of 2027) with a deep interest in bridging the gap between hardware instrumentation and modern software engineering. Whether building automated test apparatuses or full-stack web dashboards, I focus on precision, efficiency, and reliability.
               </p>
               <p>
-                Before Veritas, I studied Computer Science at UC Berkeley, where I spent too many
-                nights in the systems lab and learned to love a well-placed abstraction. Outside of
-                work I contribute to open source, write occasionally about distributed systems, and
-                take on endurance cycling when screens become too much.
+                Before diving deeply into computer engineering, I spent over five years working in functional quality assurance at Keywords Studios. That experience instilled a rigorous mindset for finding edge cases, documenting complex software bugs, and collaborating directly with development teams in fast-paced environments.
+              </p>
+              <p>
+                When I&apos;m not debugging code or designing digital systems, you can usually find me racing on the water with my dragonboat team, playing volleyball, hitting the gym, or experimenting with new recipes in the kitchen.
               </p>
             </div>
 
@@ -323,7 +297,7 @@ export default function App() {
                 className="text-xs tracking-widest uppercase text-muted-foreground mb-6"
                 style={{ fontFamily: "'DM Mono', monospace" }}
               >
-                Technical Stack
+                Technical Stack &amp; Tools
               </h3>
               <div className="grid grid-cols-2 gap-6">
                 {SKILLS.map((group) => (
@@ -349,9 +323,9 @@ export default function App() {
             {/* Stats bar */}
             <div className="grid grid-cols-3 gap-px border border-border">
               {[
-                { n: "5+", label: "Years of exp." },
-                { n: "40k+", label: "Lines open-sourced" },
-                { n: "12", label: "Production systems" },
+                { n: "5+", label: "Years QA Exp." },
+                { n: "500+", label: "Bugs Triaged" },
+                { n: "2027", label: "Expected Grad." },
               ].map((stat) => (
                 <div key={stat.label} className="bg-card p-6">
                   <p
@@ -390,7 +364,7 @@ export default function App() {
               className="mt-4 text-4xl font-black leading-tight"
               style={{ fontFamily: "'Epilogue', sans-serif" }}
             >
-              Things I&apos;ve built
+              Featured Applications &amp; Research
             </h2>
           </div>
           <span
@@ -427,19 +401,19 @@ export default function App() {
               className="text-xs tracking-widest uppercase text-muted-foreground"
               style={{ fontFamily: "'DM Mono', monospace" }}
             >
-              03 / Experience
+              03 / Experience &amp; Education
             </span>
             <h2
               className="mt-4 text-4xl font-black leading-tight"
               style={{ fontFamily: "'Epilogue', sans-serif" }}
             >
-              Where I&apos;ve worked
+              My background
             </h2>
             <a
-              href="#"
+              href="mailto:knabil8600@gmail.com?subject=Resume%20Request"
               className="mt-8 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground border border-border px-4 py-2 transition-colors hover:border-foreground"
             >
-              Full Résumé <ExternalLink size={14} />
+              Request CV <ExternalLink size={14} />
             </a>
           </div>
 
@@ -508,30 +482,29 @@ export default function App() {
 
           <div className="grid md:grid-cols-2 gap-12 items-end">
             <p className="text-primary-foreground/60 leading-relaxed max-w-sm">
-              I&apos;m open to senior/staff engineering roles, technical co-founder conversations,
-              and interesting contract work. Best way to reach me is email.
+              I&apos;m currently seeking engineering internships, co-op opportunities, and collaborative software projects. Feel free to reach out via email or phone!
             </p>
 
             <div className="space-y-4">
               <a
-                href="mailto:alex.chen@example.com"
+                href="mailto:knabil8600@gmail.com"
                 className="flex items-center justify-between w-full border border-primary-foreground/20 px-5 py-4 hover:border-accent hover:text-accent transition-colors group"
               >
                 <span className="flex items-center gap-3 text-sm">
                   <Mail size={16} />
-                  alex.chen@example.com
+                  knabil8600@gmail.com
                 </span>
                 <ArrowUpRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
               </a>
               <a
-                href="https://github.com"
+                href="https://github.com/nabnab00"
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center justify-between w-full border border-primary-foreground/20 px-5 py-4 hover:border-accent hover:text-accent transition-colors group"
               >
                 <span className="flex items-center gap-3 text-sm">
                   <Github size={16} />
-                  github.com/alexchen
+                  github.com/nabnab00
                 </span>
                 <ArrowUpRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
               </a>
@@ -543,7 +516,7 @@ export default function App() {
               >
                 <span className="flex items-center gap-3 text-sm">
                   <Linkedin size={16} />
-                  linkedin.com/in/alexchen
+                  LinkedIn Profile
                 </span>
                 <ArrowUpRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
               </a>
@@ -555,13 +528,13 @@ export default function App() {
               className="text-xs text-primary-foreground/30"
               style={{ fontFamily: "'DM Mono', monospace" }}
             >
-              © 2025 Alex Chen
+              © 2026 Nabil Khan
             </span>
             <span
               className="text-xs text-primary-foreground/30 flex items-center gap-2"
               style={{ fontFamily: "'DM Mono', monospace" }}
             >
-              <Terminal size={12} /> Built with React + TypeScript
+              <Terminal size={12} /> Built with React + TypeScript + Tailwind
             </span>
           </div>
         </div>
