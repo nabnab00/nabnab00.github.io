@@ -229,7 +229,7 @@ export default function App() {
                 className="text-[clamp(3rem,6vw,5.5rem)] font-black leading-[0.9] tracking-tight text-foreground"
                 style={{ fontFamily: "'Epilogue', sans-serif" }}
               >
-                Hi, my name is{" "}
+                Hi, i'm{" "}
                 <br />
                 <span className="text-accent">
                   Nabil Khan.
