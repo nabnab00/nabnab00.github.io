@@ -197,58 +197,144 @@ export default function App() {
       {/* ── Hero ── */}
       <section
         id="hero"
-        className="min-h-screen flex flex-col justify-end pb-24 px-6 pt-32 max-w-5xl mx-auto"
+        className="min-h-screen flex flex-col justify-center pb-24 px-6 pt-32 max-w-6xl mx-auto"
       >
-        <div className="mb-6 flex items-center gap-3">
+        {/* Top Status Pill */}
+        <div className="mb-8 flex items-center gap-3">
           <span
-            className="text-xs tracking-widest uppercase text-accent"
+            className="text-xs tracking-widest uppercase text-accent font-semibold px-3 py-1 bg-accent/10 rounded-full border border-accent/20"
             style={{ fontFamily: "'DM Mono', monospace" }}
           >
-            Available for full time positions
+            Available for full-time roles
           </span>
           <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
         </div>
 
-        <h1
-          className="text-[clamp(3rem,10vw,8rem)] font-black leading-[0.92] tracking-tight mb-8"
-          style={{ fontFamily: "'Epilogue', sans-serif" }}
-        >
-          Computer
-          <br />
-          <span className="text-accent">Engineering</span>
-          <br />
-          Student &amp; Dev
-        </h1>
+        {/* Main Scrapbook Grid */}
+        <div className="grid lg:grid-cols-[1fr_1.3fr] gap-12 items-center">
+          
+          {/* Left Column: Big Lowercase Intro & Social Badges */}
+          <div className="space-y-8">
+            <h1
+              className="text-[clamp(3rem,6vw,5.5rem)] font-black leading-[0.9] tracking-tight text-foreground"
+              style={{ fontFamily: "'Epilogue', sans-serif" }}
+            >
+              hi, my name is{" "}
+              <br />
+              <span className="text-accent underline decoration-wavy decoration-accent/40 underline-offset-8">
+                nabil khan.
+              </span>
+            </h1>
 
-        <div className="grid md:grid-cols-2 gap-8 items-end">
-          <p className="text-lg text-muted-foreground leading-relaxed max-w-md">
-            I build reliable automated systems, machine learning pipelines, and responsive web applications. Currently studying at{" "}
-            <span className="text-foreground font-medium">Concordia University</span> in Montreal, shipping hardware-software integrations that solve real-world problems.
-          </p>
-          <div className="flex flex-wrap gap-4 md:justify-end">
-            <a
-              href="https://github.com/nabnab00"
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground border border-border px-4 py-2 transition-colors hover:border-foreground"
-            >
-              <Github size={16} /> GitHub
-            </a>
-            <a
-              href="https://www.linkedin.com/in/nabil-khan00/"
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground border border-border px-4 py-2 transition-colors hover:border-foreground"
-            >
-              <Linkedin size={16} /> LinkedIn
-            </a>
-            <button
-              onClick={() => scrollTo("projects")}
-              className="flex items-center gap-2 text-sm bg-primary text-primary-foreground px-4 py-2 hover:bg-accent hover:text-accent-foreground transition-colors"
-            >
-              View Projects <ArrowUpRight size={16} />
-            </button>
+            <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-md font-normal">
+              a computer engineering student interested in hardware and software design.
+            </p>
+
+            {/* "Wax Seal" / Stamped Style Social Buttons */}
+            <div className="pt-2 flex flex-wrap items-center gap-4">
+              <a
+                href="https://github.com/nabnab00"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2 text-sm font-medium bg-card text-foreground border-2 border-border px-5 py-3 rounded-full shadow-sm hover:border-foreground hover:-translate-y-0.5 transition-all"
+              >
+                <Github size={18} /> github
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2 text-sm font-medium bg-card text-foreground border-2 border-border px-5 py-3 rounded-full shadow-sm hover:border-foreground hover:-translate-y-0.5 transition-all"
+              >
+                <Linkedin size={18} /> linkedin
+              </a>
+              <button
+                onClick={() => scrollTo("projects")}
+                className="flex items-center gap-2 text-sm font-medium bg-primary text-primary-foreground px-6 py-3 rounded-full shadow-md hover:bg-accent hover:text-accent-foreground hover:-translate-y-0.5 transition-all"
+              >
+                view projects <ArrowUpRight size={18} />
+              </button>
+            </div>
           </div>
+
+          {/* Right Column: The Vintage Postcard Card */}
+          <div className="relative flex justify-center lg:justify-end pt-6 lg:pt-0">
+            
+            {/* Background decorative rotated tilt */}
+            <div className="absolute inset-0 bg-secondary/80 border border-border rounded-2xl -rotate-2 scale-[0.98] transition-transform duration-500 hover:rotate-0" />
+
+            {/* Main Postcard Body */}
+            <div className="relative bg-card border-2 border-border rounded-xl shadow-xl p-6 sm:p-8 w-full max-w-xl grid sm:grid-cols-[1.2fr_1fr] gap-6 items-center rotate-1 hover:rotate-0 transition-transform duration-300">
+              
+              {/* Left Side of Postcard: Typed Details */}
+              <div className="space-y-4 text-sm border-b sm:border-b-0 sm:border-r border-border/60 pb-6 sm:pb-0 sm:pr-6">
+                <div className="border-b border-border/40 pb-3">
+                  <h3 
+                    className="font-black tracking-widest text-base uppercase text-foreground"
+                    style={{ fontFamily: "'Epilogue', sans-serif" }}
+                  >
+                    POST CARD
+                  </h3>
+                  <p className="text-xs text-muted-foreground italic mt-0.5">
+                    from Nabil Khan
+                  </p>
+                </div>
+
+                <div className="space-y-3 pt-1">
+                  <div>
+                    <span className="text-[11px] font-mono uppercase text-muted-foreground block">
+                      Based in:
+                    </span>
+                    <span className="font-medium text-foreground">
+                      Montreal, Canada
+                    </span>
+                  </div>
+
+                  <div>
+                    <span className="text-[11px] font-mono uppercase text-muted-foreground block">
+                      Currently:
+                    </span>
+                    <span className="font-medium text-foreground">
+                      B.Eng at Concordia University
+                    </span>
+                  </div>
+
+                  <div>
+                    <span className="text-[11px] font-mono uppercase text-muted-foreground block">
+                      Specialties:
+                    </span>
+                    <span className="font-medium text-foreground text-xs leading-relaxed block mt-0.5">
+                      ★ Hardware &amp; Embedded Systems
+                      <br />
+                      ★ Full-Stack Web Development
+                      <br />
+                      ★ Machine Learning Pipelines
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Side of Postcard: Photo Stamp */}
+              <div className="flex flex-col items-center justify-center">
+                <div className="relative w-44 h-56 sm:w-48 sm:h-64 bg-muted rounded-lg overflow-hidden border border-border shadow-inner group">
+                  <img
+                    src="/profile.jpg"
+                    alt="Nabil Khan"
+                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  />
+                  {/* Subtle stamp postmark overlay in the corner */}
+                  <div className="absolute top-2 right-2 w-8 h-8 rounded-full border border-white/40 flex items-center justify-center pointer-events-none opacity-70">
+                    <span className="text-[7px] text-white font-mono uppercase">MTL</span>
+                  </div>
+                </div>
+                <span className="text-[10px] font-mono text-muted-foreground mt-2 tracking-widest uppercase">
+                  Class of 2027
+                </span>
+              </div>
+
+            </div>
+          </div>
+
         </div>
 
         <button
@@ -256,10 +342,9 @@ export default function App() {
           className="mt-16 self-start flex items-center gap-2 text-xs text-muted-foreground hover:text-foreground transition-colors"
           style={{ fontFamily: "'DM Mono', monospace" }}
         >
-          <ChevronDown size={14} className="animate-bounce" /> Scroll to explore
+          <ChevronDown size={14} className="animate-bounce" /> scroll to explore
         </button>
       </section>
-
       {/* ── About ── */}
       <section id="about" className="py-32 px-6 max-w-5xl mx-auto">
         <div className="grid md:grid-cols-[1fr_2fr] gap-16 items-start">
