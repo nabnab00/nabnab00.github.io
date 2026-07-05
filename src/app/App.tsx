@@ -417,7 +417,7 @@ export default function App() {
               className="mt-4 text-4xl font-black leading-tight"
               style={{ fontFamily: "'Epilogue', sans-serif" }}
             >
-              My background
+              Background
             </h2>
             <a
               href="/Nabil_Khan_Resume.pdf"
