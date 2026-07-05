@@ -200,7 +200,7 @@ export default function App() {
         className="relative min-h-screen flex flex-col justify-center pb-24 px-6 pt-32 bg-cover bg-center bg-no-repeat overflow-hidden"
         style={{
           // Links to your uploaded line-art background in the public folder
-          backgroundImage: "url('/hero-bg.jpg')",
+          backgroundImage: "url('/hero-bg.png')",
         }}
       >
         {/* Optional subtle overlay to ensure text remains 100% readable over the detailed line art */}
