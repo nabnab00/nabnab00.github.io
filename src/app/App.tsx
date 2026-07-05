@@ -216,15 +216,15 @@ export default function App() {
           {/* Left Column: Big Lowercase Intro & Social Badges */}
           <div className="space-y-8">
             <h1
-              className="text-[clamp(3rem,6vw,5.5rem)] font-black leading-[0.9] tracking-tight text-foreground"
-              style={{ fontFamily: "'Epilogue', sans-serif" }}
-            >
-              hi, my name is{" "}
-              <br />
-              <span className="text-accent underline decoration-wavy decoration-accent/40 underline-offset-8">
-                nabil khan.
-              </span>
-            </h1>
+  className="text-[clamp(3rem,6vw,5.5rem)] font-black leading-[0.9] tracking-tight text-foreground"
+  style={{ fontFamily: "'Epilogue', sans-serif" }}
+>
+  Hi, my name is{" "}
+  <br />
+  <span className="text-accent">
+    Nabil Khan.
+  </span>
+</h1>
 
             <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-md font-normal">
               a computer engineering student interested in hardware and software design.
