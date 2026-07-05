@@ -194,241 +194,166 @@ export default function App() {
         )}
       </header>
 
-      {/* ── Hero ── */}
+{/* ── Hero ── */}
       <section
         id="hero"
-        className="min-h-screen flex flex-col justify-center pb-24 px-6 pt-32 max-w-6xl mx-auto"
+        className="relative min-h-screen flex flex-col justify-center pb-24 px-6 pt-32 bg-cover bg-center bg-no-repeat overflow-hidden"
+        style={{
+          // Links to your uploaded line-art background in the public folder
+          backgroundImage: "url('/hero-bg.jpg')",
+        }}
       >
-        {/* Top Status Pill */}
-        <div className="mb-8 flex items-center gap-3">
-          <span
-            className="text-xs tracking-widest uppercase text-accent font-semibold px-3 py-1 bg-accent/10 rounded-full border border-accent/20"
-            style={{ fontFamily: "'DM Mono', monospace" }}
-          >
-            Available for full-time roles
-          </span>
-          <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-        </div>
+        {/* Optional subtle overlay to ensure text remains 100% readable over the detailed line art */}
+        <div className="absolute inset-0 bg-background/40 pointer-events-none" />
 
-        {/* Main Scrapbook Grid */}
-        <div className="grid lg:grid-cols-[1fr_1.3fr] gap-12 items-center">
+        {/* Content Wrapper (Z-index ensures content sits above the background image) */}
+        <div className="relative z-10 max-w-6xl mx-auto w-full">
           
-          {/* Left Column: Big Lowercase Intro & Social Badges */}
-          <div className="space-y-8">
-            <h1
-  className="text-[clamp(3rem,6vw,5.5rem)] font-black leading-[0.9] tracking-tight text-foreground"
-  style={{ fontFamily: "'Epilogue', sans-serif" }}
->
-  Hi, my name is{" "}
-  <br />
-  <span className="text-accent">
-    Nabil Khan.
-  </span>
-</h1>
-
-            <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-md font-normal">
-              a computer engineering student interested in hardware and software design.
-            </p>
-
-            {/* "Wax Seal" / Stamped Style Social Buttons */}
-            <div className="pt-2 flex flex-wrap items-center gap-4">
-              <a
-                href="https://github.com/nabnab00"
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-2 text-sm font-medium bg-card text-foreground border-2 border-border px-5 py-3 rounded-full shadow-sm hover:border-foreground hover:-translate-y-0.5 transition-all"
-              >
-                <Github size={18} /> github
-              </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-2 text-sm font-medium bg-card text-foreground border-2 border-border px-5 py-3 rounded-full shadow-sm hover:border-foreground hover:-translate-y-0.5 transition-all"
-              >
-                <Linkedin size={18} /> linkedin
-              </a>
-              <button
-                onClick={() => scrollTo("projects")}
-                className="flex items-center gap-2 text-sm font-medium bg-primary text-primary-foreground px-6 py-3 rounded-full shadow-md hover:bg-accent hover:text-accent-foreground hover:-translate-y-0.5 transition-all"
-              >
-                view projects <ArrowUpRight size={18} />
-              </button>
-            </div>
-          </div>
-
-          {/* Right Column: The Vintage Postcard Card */}
-          <div className="relative flex justify-center lg:justify-end pt-6 lg:pt-0">
-            
-            {/* Background decorative rotated tilt */}
-            <div className="absolute inset-0 bg-secondary/80 border border-border rounded-2xl -rotate-2 scale-[0.98] transition-transform duration-500 hover:rotate-0" />
-
-            {/* Main Postcard Body */}
-            <div className="relative bg-card border-2 border-border rounded-xl shadow-xl p-6 sm:p-8 w-full max-w-xl grid sm:grid-cols-[1.2fr_1fr] gap-6 items-center rotate-1 hover:rotate-0 transition-transform duration-300">
-              
-              {/* Left Side of Postcard: Typed Details */}
-              <div className="space-y-4 text-sm border-b sm:border-b-0 sm:border-r border-border/60 pb-6 sm:pb-0 sm:pr-6">
-                <div className="border-b border-border/40 pb-3">
-                  <h3 
-                    className="font-black tracking-widest text-base uppercase text-foreground"
-                    style={{ fontFamily: "'Epilogue', sans-serif" }}
-                  >
-                    POST CARD
-                  </h3>
-                  <p className="text-xs text-muted-foreground italic mt-0.5">
-                    from Nabil Khan
-                  </p>
-                </div>
-
-                <div className="space-y-3 pt-1">
-                  <div>
-                    <span className="text-[11px] font-mono uppercase text-muted-foreground block">
-                      Based in:
-                    </span>
-                    <span className="font-medium text-foreground">
-                      Montreal, Canada
-                    </span>
-                  </div>
-
-                  <div>
-                    <span className="text-[11px] font-mono uppercase text-muted-foreground block">
-                      Currently:
-                    </span>
-                    <span className="font-medium text-foreground">
-                      B.Eng at Concordia University
-                    </span>
-                  </div>
-
-                  <div>
-                    <span className="text-[11px] font-mono uppercase text-muted-foreground block">
-                      Specialties:
-                    </span>
-                    <span className="font-medium text-foreground text-xs leading-relaxed block mt-0.5">
-                      ★ Hardware &amp; Embedded Systems
-                      <br />
-                      ★ Full-Stack Web Development
-                      <br />
-                      ★ Machine Learning Pipelines
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Right Side of Postcard: Photo Stamp */}
-              <div className="flex flex-col items-center justify-center">
-                <div className="relative w-44 h-56 sm:w-48 sm:h-64 bg-muted rounded-lg overflow-hidden border border-border shadow-inner group">
-                  <img
-                    src="/profile.jpg"
-                    alt="Nabil Khan"
-                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                  />
-                  {/* Subtle stamp postmark overlay in the corner */}
-                  <div className="absolute top-2 right-2 w-8 h-8 rounded-full border border-white/40 flex items-center justify-center pointer-events-none opacity-70">
-                    <span className="text-[7px] text-white font-mono uppercase">MTL</span>
-                  </div>
-                </div>
-                <span className="text-[10px] font-mono text-muted-foreground mt-2 tracking-widest uppercase">
-                  Class of 2027
-                </span>
-              </div>
-
-            </div>
-          </div>
-
-        </div>
-
-        <button
-          onClick={() => scrollTo("about")}
-          className="mt-16 self-start flex items-center gap-2 text-xs text-muted-foreground hover:text-foreground transition-colors"
-          style={{ fontFamily: "'DM Mono', monospace" }}
-        >
-          <ChevronDown size={14} className="animate-bounce" /> scroll to explore
-        </button>
-      </section>
-      {/* ── About ── */}
-      <section id="about" className="py-32 px-6 max-w-5xl mx-auto">
-        <div className="grid md:grid-cols-[1fr_2fr] gap-16 items-start">
-          <div>
+          {/* Top Status Pill */}
+          <div className="mb-8 flex items-center gap-3 animate-fade-in">
             <span
-              className="text-xs tracking-widest uppercase text-muted-foreground"
+              className="text-xs tracking-widest uppercase text-accent font-semibold px-3 py-1 bg-accent/10 rounded-full border border-accent/20 bg-background/80 backdrop-blur-sm"
               style={{ fontFamily: "'DM Mono', monospace" }}
             >
-              01 / About
+              Available for full-time roles
             </span>
-            <h2
-              className="mt-4 text-4xl font-black leading-tight"
-              style={{ fontFamily: "'Epilogue', sans-serif" }}
-            >
-              Engineering rigor meets clean software
-            </h2>
+            <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
           </div>
 
-          <div className="space-y-12">
-            <div className="space-y-5 text-muted-foreground leading-relaxed">
-              <p>
-                I&apos;m Nabil Khan, an engineering student at Concordia University (Class of 2027) with a deep interest in bridging the gap between hardware instrumentation and modern software engineering. Whether building automated test apparatuses or full-stack web dashboards, I focus on precision, efficiency, and reliability.
-              </p>
-              <p>
-                Before getting into computer engineering, here's a little bit about me. I spent over five years working in software quality assurance at Keywords Studios. That experience instilled a rigorous mindset for finding edge cases, documenting complex software bugs, and collaborating directly with development teams in fast-paced environments.
-              </p>
-              <p>
-                When I&apos;m not debugging code or designing digital systems, you can usually find me racing on the water with my dragonboat team, playing volleyball, hitting the gym, or testing out new recipes in the kitchen.
-              </p>
-            </div>
-
-            {/* Skills grid */}
-            <div>
-              <h3
-                className="text-xs tracking-widest uppercase text-muted-foreground mb-6"
-                style={{ fontFamily: "'DM Mono', monospace" }}
+          {/* Main Scrapbook Grid */}
+          <div className="grid lg:grid-cols-[1fr_1.3fr] gap-12 items-center">
+            
+            {/* Left Column: Big Intro & Social Badges (Fades in immediately) */}
+            <div className="space-y-8 animate-fade-in">
+              <h1
+                className="text-[clamp(3rem,6vw,5.5rem)] font-black leading-[0.9] tracking-tight text-foreground"
+                style={{ fontFamily: "'Epilogue', sans-serif" }}
               >
-                Technical Stack &amp; Tools
-              </h3>
-              <div className="grid grid-cols-2 gap-6">
-                {SKILLS.map((group) => (
-                  <div key={group.category}>
-                    <p
-                      className="text-xs text-accent font-medium mb-3"
-                      style={{ fontFamily: "'DM Mono', monospace" }}
-                    >
-                      {group.category}
-                    </p>
-                    <ul className="space-y-1">
-                      {group.items.map((item) => (
-                        <li key={item} className="text-sm text-foreground">
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
+                hi, my name is{" "}
+                <br />
+                <span className="text-accent">
+                  nabil khan.
+                </span>
+              </h1>
+
+              <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-md font-normal">
+                a computer engineering student interested in hardware and software design.
+              </p>
+
+              {/* Stamped Style Social Buttons */}
+              <div className="pt-2 flex flex-wrap items-center gap-4">
+                <a
+                  href="https://github.com/nabnab00"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-2 text-sm font-medium bg-card/90 backdrop-blur-sm text-foreground border-2 border-border px-5 py-3 rounded-full shadow-sm hover:border-foreground hover:-translate-y-0.5 transition-all"
+                >
+                  <Github size={18} /> github
+                </a>
+                <a
+                  href="https://linkedin.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-2 text-sm font-medium bg-card/90 backdrop-blur-sm text-foreground border-2 border-border px-5 py-3 rounded-full shadow-sm hover:border-foreground hover:-translate-y-0.5 transition-all"
+                >
+                  <Linkedin size={18} /> linkedin
+                </a>
+                <button
+                  onClick={() => scrollTo("projects")}
+                  className="flex items-center gap-2 text-sm font-medium bg-primary text-primary-foreground px-6 py-3 rounded-full shadow-md hover:bg-accent hover:text-accent-foreground hover:-translate-y-0.5 transition-all"
+                >
+                  view projects <ArrowUpRight size={18} />
+                </button>
               </div>
             </div>
 
-            {/* Stats bar */}
-            <div className="grid grid-cols-3 gap-px border border-border">
-              {[
-                { n: "5+", label: "Years QA Exp." },
-                { n: "500+", label: "Bugs Triaged" },
-                { n: "2027", label: "Expected Grad." },
-              ].map((stat) => (
-                <div key={stat.label} className="bg-card p-6">
-                  <p
-                    className="text-3xl font-black text-foreground"
-                    style={{ fontFamily: "'Epilogue', sans-serif" }}
-                  >
-                    {stat.n}
-                  </p>
-                  <p
-                    className="text-xs text-muted-foreground mt-1"
-                    style={{ fontFamily: "'DM Mono', monospace" }}
-                  >
-                    {stat.label}
-                  </p>
+            {/* Right Column: The Vintage Postcard Card (Fades in with a 0.3s delay for a layered effect!) */}
+            <div className="relative flex justify-center lg:justify-end pt-6 lg:pt-0 animate-fade-in-delayed">
+              
+              {/* Background decorative rotated tilt */}
+              <div className="absolute inset-0 bg-secondary/90 border border-border rounded-2xl -rotate-2 scale-[0.98] transition-transform duration-500 hover:rotate-0" />
+
+              {/* Main Postcard Body */}
+              <div className="relative bg-card/95 backdrop-blur-sm border-2 border-border rounded-xl shadow-xl p-6 sm:p-8 w-full max-w-xl grid sm:grid-cols-[1.2fr_1fr] gap-6 items-center rotate-1 hover:rotate-0 transition-transform duration-300">
+                
+                {/* Left Side of Postcard: Typed Details */}
+                <div className="space-y-4 text-sm border-b sm:border-b-0 sm:border-r border-border/60 pb-6 sm:pb-0 sm:pr-6">
+                  <div className="border-b border-border/40 pb-3">
+                    <h3 
+                      className="font-black tracking-widest text-base uppercase text-foreground"
+                      style={{ fontFamily: "'Epilogue', sans-serif" }}
+                    >
+                      POST CARD
+                    </h3>
+                    <p className="text-xs text-muted-foreground italic mt-0.5">
+                      from Nabil Khan
+                    </p>
+                  </div>
+
+                  <div className="space-y-3 pt-1">
+                    <div>
+                      <span className="text-[11px] font-mono uppercase text-muted-foreground block">
+                        Based in:
+                      </span>
+                      <span className="font-medium text-foreground">
+                        Montreal, Canada
+                      </span>
+                    </div>
+
+                    <div>
+                      <span className="text-[11px] font-mono uppercase text-muted-foreground block">
+                        Currently:
+                      </span>
+                      <span className="font-medium text-foreground">
+                        B.Eng at Concordia University
+                      </span>
+                    </div>
+
+                    <div>
+                      <span className="text-[11px] font-mono uppercase text-muted-foreground block">
+                        Specialties:
+                      </span>
+                      <span className="font-medium text-foreground text-xs leading-relaxed block mt-0.5">
+                        ★ Hardware &amp; Embedded Systems
+                        <br />
+                        ★ Full-Stack Web Development
+                        <br />
+                        ★ Machine Learning Pipelines
+                      </span>
+                    </div>
+                  </div>
                 </div>
-              ))}
+
+                {/* Right Side of Postcard: Photo Stamp */}
+                <div className="flex flex-col items-center justify-center">
+                  <div className="relative w-44 h-56 sm:w-48 sm:h-64 bg-muted rounded-lg overflow-hidden border border-border shadow-inner group">
+                    <img
+                      src="/profile.jpg"
+                      alt="Nabil Khan"
+                      className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute top-2 right-2 w-8 h-8 rounded-full border border-white/40 flex items-center justify-center pointer-events-none opacity-70">
+                      <span className="text-[7px] text-white font-mono uppercase">MTL</span>
+                    </div>
+                  </div>
+                  <span className="text-[10px] font-mono text-muted-foreground mt-2 tracking-widest uppercase">
+                    Class of 2027
+                  </span>
+                </div>
+
+              </div>
             </div>
+
           </div>
+
+          {/* Scroll Down Button */}
+          <button
+            onClick={() => scrollTo("about")}
+            className="mt-16 self-start flex items-center gap-2 text-xs text-muted-foreground hover:text-foreground transition-colors animate-fade-in-delayed"
+            style={{ fontFamily: "'DM Mono', monospace" }}
+          >
+            <ChevronDown size={14} className="animate-bounce" /> scroll to explore
+          </button>
         </div>
       </section>
 
