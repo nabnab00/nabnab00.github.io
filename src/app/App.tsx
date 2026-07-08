@@ -4,10 +4,33 @@ import { Github, Linkedin, Mail, ExternalLink, ArrowUpRight, ChevronDown, Termin
 const NAV_LINKS = ["About", "Projects", "Experience", "Contact"];
 
 const SKILLS = [
-  { category: "Languages", items: ["Python", "Java", "C++", "C#", "C", "JavaScript", "Verilog", "VHDL"] },
-  { category: "Web & Cloud", items: ["React", "Node.js", "Flask", "HTML/CSS", "Tailwind CSS", "Firebase"] },
-  { category: "Data & AI", items: ["TensorFlow", "Scikit-Learn", "Machine Learning", "Data Pipelines", "Grid Search"] },
-  { category: "Systems & Tools", items: ["SQL", "MongoDB", "Git", "Jira", "Embedded Systems", "NI CompactRIO"] },
+  { 
+    category: "Programming Languages", 
+    items: ["Python", "Java", "C++", "C#", "C", "JavaScript", "TypeScript", "Go", "Rust", "Bash / Shell", "MATLAB", "Verilog", "VHDL", "SQL"] 
+  },
+  { 
+    category: "Web & Cloud Technologies", 
+    items: ["React", "Node.js", "Next.js", "Flask", "HTML/CSS", "Tailwind CSS", "REST APIs", "GraphQL", "Firebase", "Docker", "AWS Basic"] 
+  },
+  { 
+    category: "Data Science & AI", 
+    items: ["TensorFlow", "Scikit-Learn", "PyTorch", "Machine Learning", "Data Pipelines", "Pandas & NumPy", "Grid Search"] 
+  },
+  { 
+    category: "Systems, Hardware & Tools", 
+    items: ["Embedded Systems", "NI CompactRIO", "Linear Actuators", "MongoDB", "PostgreSQL", "Git & GitHub", "Jira", "Linux / Unix"] 
+  },
+];
+
+const COURSES = [
+  {
+    category: "Core Software & AI",
+    items: ["Data Structures and Algorithms", "Operating Systems", "Applied Machine Learning", "Artificial Intelligence", "Computer Graphics"]
+  },
+  {
+    category: "Hardware & Systems Engineering",
+    items: ["Computer Architecture and Design", "Digital System Design", "Computer Organization and Software", "Fundamentals of Control Systems", "Time Signals and Systems"]
+  }
 ];
 
 const PROJECTS = [
@@ -360,6 +383,141 @@ export default function App() {
       {/* ── Divider ── */}
       <div className="border-t border-border max-w-5xl mx-auto" />
 
+      {/* ── About ── */}
+      <section id="about" className="py-32 px-6 max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-[1fr_2.2fr] gap-16 items-start">
+          
+          {/* Left Column: Section Header */}
+          <div>
+            <span
+              className="text-xs tracking-widest uppercase text-muted-foreground"
+              style={{ fontFamily: "'DM Mono', monospace" }}
+            >
+              01 / About
+            </span>
+            <h2
+              className="mt-4 text-4xl font-black leading-tight text-foreground"
+              style={{ fontFamily: "'Epilogue', sans-serif" }}
+            >
+              Engineering rigor meets clean software
+            </h2>
+          </div>
+
+          {/* Right Column: Bio, Skills, Coursework & Stats */}
+          <div className="space-y-16">
+            
+            {/* Bio Paragraphs */}
+            <div className="space-y-5 text-muted-foreground leading-relaxed text-lg">
+              <p>
+                I&apos;m Nabil Khan, an engineering student at Concordia University (Class of 2027) with a deep interest in bridging the gap between hardware instrumentation and modern software engineering. Whether building automated test apparatuses or full-stack web dashboards, I focus on precision, efficiency, and reliability.
+              </p>
+              <p>
+                Before diving deeply into computer engineering, I spent over five years working in functional quality assurance at Keywords Studios. That experience instilled a rigorous mindset for finding edge cases, documenting complex software bugs, and collaborating directly with development teams in fast-paced environments.
+              </p>
+            </div>
+
+            {/* Showcase 1: Languages & Technical Skills */}
+            <div className="space-y-6 pt-4 border-t border-border/60">
+              <div className="flex items-center justify-between">
+                <h3
+                  className="text-xs tracking-widest uppercase text-accent font-semibold"
+                  style={{ fontFamily: "'DM Mono', monospace" }}
+                >
+                  // Languages &amp; Technical Skills
+                </h3>
+                <span className="text-[11px] font-mono text-muted-foreground hidden sm:inline">
+                  Hover to explore stack
+                </span>
+              </div>
+
+              <div className="grid sm:grid-cols-2 gap-6">
+                {SKILLS.map((group) => (
+                  <div 
+                    key={group.category}
+                    className="bg-card/50 border border-border/80 rounded-xl p-5 hover:border-foreground/30 hover:bg-card transition-all duration-300 shadow-sm"
+                  >
+                    <p
+                      className="text-xs font-mono uppercase tracking-wider text-foreground font-semibold mb-3 pb-2 border-b border-border/40"
+                    >
+                      {group.category}
+                    </p>
+                    <div className="flex flex-wrap gap-2 pt-1">
+                      {group.items.map((item) => (
+                        <span
+                          key={item}
+                          className="text-xs font-mono px-2.5 py-1 rounded-md bg-secondary/80 text-foreground/90 border border-border/40 hover:bg-accent/15 hover:text-accent hover:border-accent/30 transition-colors cursor-default"
+                        >
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Showcase 2: Relevant Engineering Coursework */}
+            <div className="space-y-6 pt-4 border-t border-border/60">
+              <h3
+                className="text-xs tracking-widest uppercase text-accent font-semibold"
+                style={{ fontFamily: "'DM Mono', monospace" }}
+              >
+                // Relevant Engineering Coursework
+              </h3>
+
+              <div className="grid sm:grid-cols-2 gap-6">
+                {COURSES.map((group) => (
+                  <div key={group.category} className="space-y-3">
+                    <p className="text-xs font-mono uppercase tracking-wider text-muted-foreground">
+                      {group.category}
+                    </p>
+                    <ul className="space-y-2 border-l-2 border-accent/40 pl-4 py-1">
+                      {group.items.map((course) => (
+                        <li 
+                          key={course} 
+                          className="text-sm font-medium text-foreground/90 flex items-center gap-2"
+                        >
+                          <span className="w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
+                          {course}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Stats Bar */}
+            <div className="grid grid-cols-3 gap-px border border-border rounded-xl overflow-hidden bg-border pt-4">
+              {[
+                { n: "5+", label: "Years QA Exp." },
+                { n: "500+", label: "Bugs Triaged" },
+                { n: "2027", label: "Expected Grad." },
+              ].map((stat) => (
+                <div key={stat.label} className="bg-card p-6 text-center sm:text-left">
+                  <p
+                    className="text-2xl sm:text-3xl font-black text-foreground"
+                    style={{ fontFamily: "'Epilogue', sans-serif" }}
+                  >
+                    {stat.n}
+                  </p>
+                  <p
+                    className="text-[11px] sm:text-xs text-muted-foreground mt-1"
+                    style={{ fontFamily: "'DM Mono', monospace" }}
+                  >
+                    {stat.label}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ── Divider ── */}
+      <div className="border-t border-border max-w-5xl mx-auto" />
+      
       {/* ── Projects ── */}
       <section id="projects" className="py-32 px-6 max-w-5xl mx-auto">
         <div className="flex items-end justify-between mb-16">
