@@ -99,7 +99,7 @@ const EXPERIENCE = [
   },
   {
     company: "Keywords Studios",
-    role: "Functional QA Tester & QA Intern",
+    role: "QA Tester & QA Intern",
     period: "June 2017 — Sept 2022",
     location: "Montreal, QC",
     points: [
@@ -412,7 +412,7 @@ export default function App() {
                 I&apos;m Nabil Khan, an engineering student at Concordia University (Class of 2027) with a deep interest in bridging the gap between hardware instrumentation and modern software engineering. Whether building automated test apparatuses or full-stack web dashboards, I focus on precision, efficiency, and reliability.
               </p>
               <p>
-                Before diving deeply into computer engineering, I spent over five years working in functional quality assurance at Keywords Studios. That experience instilled a rigorous mindset for finding edge cases, documenting complex software bugs, and collaborating directly with development teams in fast-paced environments.
+                Before diving deeply into computer engineering, I spent over five years working in QA at Keywords Studios. That experience instilled a rigorous mindset for finding edge cases, documenting complex software bugs, and collaborating directly with development teams in fast-paced environments.
               </p>
             </div>
 
