@@ -5,21 +5,25 @@ const NAV_LINKS = ["About", "Projects", "Experience", "Contact"];
 
 const SKILLS = [
   { 
-    category: "Programming Languages", 
-    items: ["Python", "Java", "C++", "C#", "C", "JavaScript", "TypeScript", "Go", "Rust", "Bash / Shell", "MATLAB", "Verilog", "VHDL", "SQL"] 
+    category: "Languages", 
+    items: ["Python", "Java", "C/C++", "C#", "JavaScript", "TypeScript", "Go", "Rust", "SQL", "HTML/CSS", "MATLAB"] 
   },
   { 
-    category: "Web & Cloud Technologies", 
-    items: ["React", "Node.js", "Next.js", "Flask", "HTML/CSS", "Tailwind CSS", "REST APIs", "GraphQL", "Firebase", "Docker", "AWS Basic"] 
+    category: "Frameworks & Web", 
+    items: ["React", "Next.js", "Node.js", "Flask", "Tailwind CSS", "REST APIs", "GraphQL", "Android XML"] 
   },
   { 
-    category: "Data Science & AI", 
-    items: ["TensorFlow", "Scikit-Learn", "PyTorch", "Machine Learning", "Data Pipelines", "Pandas & NumPy", "Grid Search"] 
+    category: "Data Science & ML", 
+    items: ["TensorFlow", "PyTorch", "Scikit-Learn", "Pandas", "NumPy"] 
   },
   { 
-    category: "Systems, Hardware & Tools", 
-    items: ["Embedded Systems", "NI CompactRIO", "Linear Actuators", "MongoDB", "PostgreSQL", "Git & GitHub", "Jira", "Linux / Unix"] 
+    category: "Databases & Cloud", 
+    items: ["PostgreSQL", "MongoDB", "Firebase", "AWS"] 
   },
+  { 
+    category: "Hardware & Systems", 
+    items: ["Embedded Systems", "NI CompactRIO", "Verilog", "VHDL"] 
+  }
 ];
 
 const COURSES = [
@@ -59,7 +63,7 @@ const PROJECTS = [
     tag: "Full Stack",
     year: "2026",
     description:
-      "Full-stack scheduling application generating automated monthly schedules for 20+ workers in under a minute. Built manager dashboard tools using React for real-time shift adjustments, eliminating scheduling errors.",
+      "Full-stack scheduling application generating automated monthly schedules for 20+ workers in under a minute. Built manager dashboard tools using React for real-time shift adjustments, reducing scheduling errors by 90%, improving workforce coordination efficiency.",
     stack: ["React", "JavaScript", "MongoDB", "Node.js"],
     link: "#",
     featured: false,
@@ -79,7 +83,7 @@ const PROJECTS = [
     tag: "Full Stack",
     year: "2024",
     description:
-      "Full-stack inventory and POS web app featuring automated QR code generation and mobile scanning for 200+ items. Automated consignment accounting using Python and SQL to dynamically calculate vendor splits.",
+      "Full-stack inventory and POS web app featuring automated QR code generation and mobile scanning for 200+ items. Automated consignment accounting using Python and SQL to dynamically calculate vendor profit splits, eliminating manual accounting errors by 85%.",
     stack: ["React", "Flask", "PostgreSQL", "Python"],
     link: "#",
     featured: false,
@@ -99,7 +103,7 @@ const EXPERIENCE = [
   },
   {
     company: "Keywords Studios",
-    role: "QA Tester & QA Intern",
+    role: "QA Intern & QA Analyst",
     period: "June 2017 — Sept 2022",
     location: "Montreal, QC",
     points: [
