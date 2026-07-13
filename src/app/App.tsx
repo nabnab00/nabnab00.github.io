@@ -55,7 +55,7 @@ const PROJECTS = [
     description:
       "Engineered a machine learning data pipeline to clean and process 161,610 vehicle listings across 811 encoded features. Deployed an optimized Random Forest Regressor achieving a 0.94 R-squared score and low MAE of $2,067.61.",
     stack: ["Python", "Scikit-Learn", "Random Forest", "Data Pipeline"],
-    link: "#",
+    link: "https://github.com/hanishPagadala/Applied-Machine-Learning-Used-Car-Price-Prediction",
     featured: true,
   },
   {
@@ -75,7 +75,7 @@ const PROJECTS = [
     description:
       "Developed a nutrition tracking mobile app with a Java backend and real-time Firebase cloud sync for 100+ users. Engineered a Bluetooth ESP32 smart scale with ±0.01g precision, reducing meal entry time by 90%.",
     stack: ["Java", "Android XML", "ESP32", "Firebase"],
-    link: "#",
+    link: "https://github.com/nabnab00/COEN-390-Munch-Ai-Mini-Capstone",
     featured: false,
   },
   {
