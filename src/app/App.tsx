@@ -724,11 +724,19 @@ function ProjectCard({
   project: (typeof PROJECTS)[0];
   featured: boolean;
 }) {
+
+  const hasLink = project.link !== "#";
+  
+  const CardWrapper = hasLink ? "a" : "div";
+
   return (
-    <div
+    <CardWrapper
+      href={hasLink ? project.link : undefined}
+      target={hasLink ? "_blank" : undefined}
+      rel={hasLink ? "noopener noreferrer" : undefined}
       className={`group relative block p-8 bg-card/70 hover:bg-white hover:shadow-xl hover:shadow-accent/10 hover:z-10 hover:-translate-y-1 transition-all duration-300 ${
         featured ? "min-h-[280px] flex flex-col justify-between" : ""
-      }`}
+      } ${hasLink ? "cursor-pointer" : "cursor-default"}`}
     >
       <div>
         <div className="flex items-center justify-between mb-5">
@@ -755,7 +763,6 @@ function ProjectCard({
         <p className="text-sm text-muted-foreground leading-relaxed">{project.description}</p>
       </div>
 
-      {/* Footer: Displays the tech stack without any clickable link arrow */}
       <div className="mt-6 flex items-center justify-between">
         <div className="flex flex-wrap gap-2">
           {project.stack.map((s) => (
@@ -768,7 +775,15 @@ function ProjectCard({
             </span>
           ))}
         </div>
+        
+        {/* Only show the arrow icon if the project has a valid link */}
+        {hasLink && (
+          <ArrowUpRight
+            size={16}
+            className="text-muted-foreground group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0"
+          />
+        )}
       </div>
-    </div>
+    </CardWrapper>
   );
 }
