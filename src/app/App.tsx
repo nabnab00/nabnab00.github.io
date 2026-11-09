@@ -4,25 +4,29 @@ import { Github, Linkedin, Mail, ExternalLink, ArrowUpRight, ChevronDown, Termin
 const NAV_LINKS = ["About", "Projects", "Experience", "Contact"];
 
 const SKILLS = [
-  { 
-    category: "Languages", 
-    items: ["Python", "Java", "C/C++", "C#", "JavaScript", "TypeScript", "Go", "Rust", "SQL", "HTML/CSS", "MATLAB"] 
+  {
+    category: "Languages",
+    items: ["Python", "Java", "C/C++", "JavaScript", "SQL", "HTML/CSS", "MATLAB"]
   },
-  { 
-    category: "Frameworks & Web", 
-    items: ["React", "Next.js", "Node.js", "Flask", "Tailwind CSS", "REST APIs", "GraphQL", "Android XML"] 
+  {
+    category: "Web & Mobile",
+    items: ["React", "Node.js", "Flask", "REST APIs", "Android XML", "Git"]
   },
-  { 
-    category: "Data Science & ML", 
-    items: ["TensorFlow", "PyTorch", "Scikit-Learn", "Pandas", "NumPy"] 
+  {
+    category: "Testing & QA",
+    items: ["TestRail", "Jira", "JUnit", "Test Case Design", "Regression Testing", "Bug Triage"]
   },
-  { 
-    category: "Databases & Cloud", 
-    items: ["PostgreSQL", "MongoDB", "Firebase", "AWS"] 
+  {
+    category: "Data & ML",
+    items: ["Scikit-Learn", "Pandas", "NumPy"]
   },
-  { 
-    category: "Hardware & Systems", 
-    items: ["Embedded Systems", "NI CompactRIO", "Verilog", "VHDL"] 
+  {
+    category: "Databases",
+    items: ["PostgreSQL", "MongoDB", "Firebase"]
+  },
+  {
+    category: "Embedded & Hardware",
+    items: ["NI CompactRIO", "ESP32", "ATmega328P", "I2C", "PWM", "Bluetooth", "Verilog", "VHDL", "Linux"]
   }
 ];
 
@@ -43,7 +47,7 @@ const PROJECTS = [
     tag: "Engineering Capstone",
     year: "2026",
     description:
-      "Engineering an automated breathing machine control system for naval testing, improving hardware efficiency by 60%. Features a real-time frontend interface and data acquisition pipeline for 100% precise operational control.",
+      "Cut hardware test time by 80%, from 30 to 6 minutes, with an automated breathing-simulation control system on NI CompactRIO driving linear actuators. Building a real-time frontend and data acquisition pipeline that samples oxygen and pressure sensors at 100 Hz.",
     stack: ["Python", "CompactRIO", "Linear Actuators", "Embedded Systems"],
     link: "#",
     featured: true,
@@ -53,7 +57,7 @@ const PROJECTS = [
     tag: "Machine Learning",
     year: "2026",
     description:
-      "Engineered a machine learning data pipeline to clean and process 161,610 vehicle listings across 811 encoded features. Deployed an optimized Random Forest Regressor achieving a 0.94 R-squared score and low MAE of $2,067.61.",
+      "Extracted 811 encoded valuation features from 161,610 vehicle listings with a Python and Scikit-Learn pipeline. Benchmarked five regression models with grid search and 5-fold cross-validation, deploying a Random Forest that achieved 0.94 R² and $2,068 MAE.",
     stack: ["Python", "Scikit-Learn", "Random Forest", "Data Pipeline"],
     link: "https://github.com/hanishPagadala/Applied-Machine-Learning-Used-Car-Price-Prediction",
     featured: true,
@@ -63,7 +67,7 @@ const PROJECTS = [
     tag: "Full Stack",
     year: "2026",
     description:
-      "Full-stack scheduling application generating automated monthly schedules for 20+ workers in under a minute. Built manager dashboard tools using React for real-time shift adjustments, reducing scheduling errors by 90%, improving workforce coordination efficiency.",
+      "Full-stack JavaScript and MongoDB app that generates monthly schedules for 20+ employees in under one minute. React dashboards let managers adjust shifts in real time, cutting monthly scheduling errors from 10–15 to 1–2.",
     stack: ["React", "JavaScript", "MongoDB", "Node.js"],
     link: "#",
     featured: false,
@@ -73,9 +77,19 @@ const PROJECTS = [
     tag: "IoT & Mobile",
     year: "2025",
     description:
-      "Developed a nutrition tracking mobile app with a Java backend and real-time Firebase cloud sync for 100+ users. Engineered a Bluetooth ESP32 smart scale with ±0.01g precision, reducing meal entry time by 90%.",
+      "Android nutrition-tracking app with a Java backend and real-time Firebase sync, validated with 100+ simulated users. Paired with an ESP32 smart scale (±0.01 g) that streams weights over Bluetooth, cutting meal-logging time from 1–2 minutes to 10–15 seconds.",
     stack: ["Java", "Android XML", "ESP32", "Firebase"],
     link: "https://github.com/nabnab00/COEN-390-Munch-Ai-Mini-Capstone",
+    featured: false,
+  },
+  {
+    title: "Autonomous Hovercraft — 1st Place",
+    tag: "Embedded Systems",
+    year: "2025",
+    description:
+      "Won 1st place among 13 teams in Concordia's ENGR 290 autonomous maze challenge. Co-designed an ATmega328P navigation system fusing IMU, ultrasonic, and infrared sensing, with embedded C/C++ for yaw correction over I2C and PWM fan and servo control.",
+    stack: ["C/C++", "ATmega328P", "IMU", "I2C", "PWM"],
+    link: "#",
     featured: false,
   },
   {
@@ -83,7 +97,7 @@ const PROJECTS = [
     tag: "Full Stack",
     year: "2024",
     description:
-      "Full-stack inventory and POS web app featuring automated QR code generation and mobile scanning for 200+ items. Automated consignment accounting using Python and SQL to dynamically calculate vendor profit splits, eliminating manual accounting errors by 85%.",
+      "React, Flask, and PostgreSQL inventory and POS app with automated QR-code generation and mobile scanning for 20+ consignment products. Automated vendor profit splits and inventory updates in Python and SQL, taking spreadsheet settlement errors from roughly 30 per 100 records to zero.",
     stack: ["React", "Flask", "PostgreSQL", "Python"],
     link: "#",
     featured: false,
@@ -103,12 +117,12 @@ const EXPERIENCE = [
   },
   {
     company: "Keywords Studios",
-    role: "QA Intern & QA Analyst",
+    role: "QA Intern → QA Analyst",
     period: "June 2017 — Sept 2022",
     location: "Montreal, QC",
     points: [
-      "Developed and executed 300+ comprehensive software test cases across mobile and desktop environments utilizing TestRail, improving overall test coverage and reducing post-release defects by 18%.",
-      "Identified, documented, and triaged 500+ critical bugs using Jira, collaborating directly with development teams to propose targeted solutions that enhanced application performance and user experience.",
+      "Reduced post-release defects by 18% by designing and executing 300+ TestRail test cases across mobile and desktop platforms, expanding regression coverage.",
+      "Accelerated fixes for 500+ critical bugs by writing reproducible Jira reports, triaging severity, and partnering with development teams on targeted solutions.",
     ],
   },
 ];
@@ -278,7 +292,7 @@ export default function App() {
                   <Github size={18} /> github
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/nabil-khan00/"
                   target="_blank"
                   rel="noreferrer"
                   className="flex items-center gap-2 text-sm font-medium bg-card/90 backdrop-blur-sm text-foreground border-2 border-border px-5 py-3 rounded-full shadow-sm hover:border-foreground hover:-translate-y-0.5 transition-all"
@@ -555,7 +569,7 @@ export default function App() {
         </div>
 
         {/* Regular grid */}
-        <div className="grid md:grid-cols-3 gap-px bg-border">
+        <div className="grid md:grid-cols-2 gap-px bg-border">
           {PROJECTS.filter((p) => !p.featured).map((project) => (
             <ProjectCard key={project.title} project={project} featured={false} />
           ))}
@@ -656,7 +670,7 @@ export default function App() {
 
           <div className="grid md:grid-cols-2 gap-12 items-end">
             <p className="text-primary-foreground/60 leading-relaxed max-w-sm">
-              I&apos;m currently seeking full time oppurtunites and collaborative software projects. Feel free to reach out via email or phone!
+              I&apos;m currently seeking full-time opportunities and collaborative software projects. Feel free to reach out via email or phone!
             </p>
 
             <div className="space-y-4">
@@ -683,7 +697,7 @@ export default function App() {
                 <ArrowUpRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/nabil-khan00/"
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center justify-between w-full border border-primary-foreground/20 px-5 py-4 hover:border-accent hover:text-accent transition-colors group"
