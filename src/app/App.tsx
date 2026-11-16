@@ -183,7 +183,9 @@ const EXPERIENCE = [
     location: "Montreal, QC",
     points: [
       "Reduced post-release defects by 18% by designing and executing 300+ TestRail test cases across mobile and desktop platforms, expanding regression coverage.",
-      "Accelerated fixes for 500+ critical bugs by writing reproducible Jira reports, triaging severity, and partnering with development teams on targeted solutions.",
+      "Resolved 500+ critical bugs by partnering with developers, product managers, and client stakeholders to reproduce issues in Jira, prioritize fixes, and verify every resolution.",
+      "Cut retest time by 50% by running regression cycles on every build and recommending testing workflow improvements across the SDLC.",
+      "Ensured builds met Sony, Microsoft, and Nintendo certification requirements, plus accessibility, age-rating, and client specifications, by executing compliance checklists before every submission.",
     ],
   },
 ];
