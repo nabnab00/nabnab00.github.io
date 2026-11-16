@@ -1,5 +1,66 @@
 import { useState, useEffect } from "react";
 import { Github, Linkedin, Mail, ExternalLink, ArrowUpRight, ChevronDown, Terminal, Menu, X } from "lucide-react";
+import {
+  AlertDialog,
+  AlertDialogTrigger,
+  AlertDialogContent,
+  AlertDialogHeader,
+  AlertDialogFooter,
+  AlertDialogTitle,
+  AlertDialogDescription,
+  AlertDialogAction,
+  AlertDialogCancel,
+} from "./components/ui/alert-dialog";
+
+const EMAIL = "knabil8600@gmail.com";
+const HIRE_MAILTO = `mailto:${EMAIL}?subject=${encodeURIComponent("Opportunity for Nabil Khan")}`;
+
+function HireMeButton({ className }: { className: string }) {
+  const [copied, setCopied] = useState(false);
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(EMAIL);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      setCopied(false);
+    }
+  };
+
+  return (
+    <AlertDialog onOpenChange={(open) => !open && setCopied(false)}>
+      <AlertDialogTrigger asChild>
+        <button type="button" className={className}>
+          Hire me
+        </button>
+      </AlertDialogTrigger>
+      <AlertDialogContent className="rounded-none">
+        <AlertDialogHeader>
+          <AlertDialogTitle>Open your email app?</AlertDialogTitle>
+          <AlertDialogDescription>
+            This will open your default email app with a new message to{" "}
+            <span className="text-foreground font-medium">{EMAIL}</span>. Nothing is sent until you
+            press send.
+          </AlertDialogDescription>
+        </AlertDialogHeader>
+        <AlertDialogFooter>
+          <AlertDialogCancel className="rounded-none">Cancel</AlertDialogCancel>
+          <button
+            type="button"
+            onClick={copyEmail}
+            className="text-sm px-4 py-2 border border-border hover:bg-secondary transition-colors"
+          >
+            {copied ? "Copied!" : "Copy email"}
+          </button>
+          <AlertDialogAction asChild className="rounded-none hover:bg-accent hover:text-accent-foreground">
+            <a href={HIRE_MAILTO}>Open email app</a>
+          </AlertDialogAction>
+        </AlertDialogFooter>
+      </AlertDialogContent>
+    </AlertDialog>
+  );
+}
 
 const NAV_LINKS = ["About", "Projects", "Experience", "Contact"];
 
@@ -200,12 +261,7 @@ export default function App() {
                 {link}
               </button>
             ))}
-            <a
-              href="mailto:knabil8600@gmail.com"
-              className="text-sm px-4 py-2 bg-primary text-primary-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
-            >
-              Hire me
-            </a>
+            <HireMeButton className="text-sm px-4 py-2 bg-primary text-primary-foreground hover:bg-accent hover:text-accent-foreground transition-colors" />
           </nav>
 
           {/* Mobile menu toggle */}
