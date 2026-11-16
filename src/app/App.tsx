@@ -129,7 +129,7 @@ const EXPERIENCE = [
 
 const TAG_COLORS: Record<string, string> = {
   "Engineering Capstone": "bg-accent/15 text-accent",
-  "Machine Learning": "bg-primary/15 text-primary font-semibold",
+  "Machine Learning": "bg-primary/15 text-primary",
   "Full Stack": "bg-secondary text-muted-foreground",
   "IoT & Mobile": "bg-primary/8 text-foreground",
 };
@@ -755,7 +755,7 @@ function ProjectCard({
       <div>
         <div className="flex items-center justify-between mb-5">
           <span
-            className={`text-xs px-2 py-0.5 ${TAG_COLORS[project.tag] ?? "bg-secondary text-muted-foreground"}`}
+            className={`text-xs font-semibold px-2 py-0.5 ${TAG_COLORS[project.tag] ?? "bg-secondary text-muted-foreground"}`}
             style={{ fontFamily: "'DM Mono', monospace" }}
           >
             {project.tag}
