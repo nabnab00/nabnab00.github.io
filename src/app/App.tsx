@@ -129,10 +129,8 @@ const EXPERIENCE = [
 
 const TAG_COLORS: Record<string, string> = {
   "Engineering Capstone": "bg-accent/15 text-accent",
-  "Machine Learning": "bg-primary/15 text-primary",
-  "Full Stack": "bg-secondary text-foreground",
-  "IoT & Mobile": "bg-primary/8 text-foreground",
 };
+const DEFAULT_TAG_COLOR = "bg-primary/15 text-foreground";
 
 function useScrollSpy(ids: string[]) {
   const [active, setActive] = useState("");
@@ -755,7 +753,7 @@ function ProjectCard({
       <div>
         <div className="flex items-center justify-between mb-5">
           <span
-            className={`text-xs font-semibold px-2 py-0.5 ${TAG_COLORS[project.tag] ?? "bg-secondary text-foreground"}`}
+            className={`text-xs font-semibold px-2 py-0.5 ${TAG_COLORS[project.tag] ?? DEFAULT_TAG_COLOR}`}
             style={{ fontFamily: "'DM Mono', monospace" }}
           >
             {project.tag}
