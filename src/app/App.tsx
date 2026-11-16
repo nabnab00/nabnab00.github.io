@@ -75,7 +75,7 @@ const SKILLS = [
   },
   {
     category: "Testing & QA",
-    items: ["TestRail", "Jira", "JUnit", "Test Case Design", "Regression Testing", "Bug Triage"]
+    items: ["Appium", "TestRail", "Jira", "JUnit", "Test Case Design", "Regression Testing", "Bug Triage"]
   },
   {
     category: "Data & ML",
@@ -182,10 +182,11 @@ const EXPERIENCE = [
     period: "June 2017 — Sept 2022",
     location: "Montreal, QC",
     points: [
-      "Reduced post-release defects by 18% by designing and executing 300+ TestRail test cases across mobile and desktop platforms, expanding regression coverage.",
-      "Resolved 500+ critical bugs by partnering with developers, product managers, and client stakeholders to reproduce issues in Jira, prioritize fixes, and verify every resolution.",
-      "Cut retest time by 50% by running regression cycles on every build and recommending testing workflow improvements across the SDLC.",
-      "Ensured builds met Sony, Microsoft, and Nintendo certification requirements, plus accessibility, age-rating, and client specifications, by executing compliance checklists before every submission.",
+      "Reduced post-release defects by 18% by designing and running 300+ TestRail test cases on mobile and desktop.",
+      "Cut build verification time by 30% with Python and Appium scripts that automated 40% of regression tests in CI.",
+      "Halved retest time by recommending regression testing workflow improvements across the SDLC.",
+      "Resolved 500+ critical bugs by reproducing issues in Jira and verifying fixes with developers, product managers, and client stakeholders.",
+      "Ensured builds met Sony, Microsoft, and Nintendo certification, accessibility, and age-rating requirements through pre-submission compliance checklists.",
     ],
   },
 ];
